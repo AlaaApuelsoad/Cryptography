@@ -18,8 +18,8 @@ public class AESMain {
             String plainText = "Hello World!";
             IvParameterSpec iv = AES.generateIv();
             SecretKey secretKey = AES.generateKey();
-            String key = AES.printKeyGenerated(secretKey);
-            System.out.println(key);
+            AES.printKeyGenerated(secretKey);
+            System.out.println( "AESKey--> " + AES.printKeyGenerated(secretKey));
 
             String cipherText = AES.encrypt(plainText,secretKey);
 //            String cipherText = AES.encryptWithIV(plainText,secretKey,iv);

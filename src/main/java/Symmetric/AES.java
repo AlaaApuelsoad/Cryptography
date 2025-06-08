@@ -18,7 +18,7 @@ public class AES {
     public static SecretKey generateKey() throws NoSuchAlgorithmException {
         KeyGenerator keyGen = KeyGenerator.getInstance("AES");
 //        System.out.println(keyGen.getAlgorithm());
-        keyGen.init(128); //key length
+        keyGen.init(128); //key length 256
         return keyGen.generateKey();
     }
 
@@ -29,6 +29,10 @@ public class AES {
         return Base64.getEncoder().encodeToString(encrypted);
     }
 
+    /*
+    Initialization Vector adds randomness to the encryption process
+    ensures that the same plaintext encrypted multiple times will result in different ciphertexts
+     */
     public static IvParameterSpec generateIv() {
         byte[] iv = new byte[16];
         new SecureRandom().nextBytes(iv);

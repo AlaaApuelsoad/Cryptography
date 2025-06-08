@@ -11,8 +11,8 @@ public class RSAMain {
             KeyPair keyPair = RSA.generateKeyPair();
             PublicKey publicKey = keyPair.getPublic();
             PrivateKey privateKey = keyPair.getPrivate();
-//            System.out.println("Public Key: " + publicKey);
-//            System.out.println("Private Key: " + privateKey);
+            System.out.println("Public Key: " + publicKey);
+            System.out.println("Private Key: " + privateKey);
 
             String cipherText = RSA.encrypt(plaintext,publicKey);
             System.out.println("Cipher Text: " + cipherText);
